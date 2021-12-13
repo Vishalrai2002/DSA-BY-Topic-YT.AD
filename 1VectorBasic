@@ -1,0 +1,70 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+// All About Vector in c++
+
+int main()
+{
+    // How to declare and intialize vector
+    vector<int>v;
+
+    // Adding value in vecor
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    
+    //1. way
+    // printing values in vector using loop
+    for (int i=0;i<v.size();i++)
+    {
+        cout<<v[i]<<" ";   // 1 2 3
+    }
+        cout<<endl;
+
+    //2.way
+    // another way to print vector is "itterator"
+    vector<int>::iterator it;
+    for(it=v.begin();it!=v.end();it++)
+    {
+        cout<<*it<<" ";;    // 1 2 3
+    }
+        cout<<endl;
+
+    //3.way
+    for (auto element:v){
+        cout<<element<<" "; // 1 2 3
+    }
+    cout<<endl;
+
+
+    //Pop back() function means end element in vector is getting removed or pooped
+    v.pop_back(); 
+    for (auto pop:v){
+        cout<<pop<<" ";  // 1 2
+    }
+    cout<<endl;
+    // vector<int>v2(size,"kya need kitne baar")
+    vector<int>v2(3,50);  // 50 50 50
+
+    // swap two vector v and v2
+    swap(v,v2);
+    // Printing v vector
+    for(auto element:v){
+        cout<<element<<" "; // Now values of v are 50 50 50
+    }
+    cout<<endl;
+    
+    // Printing v2 vector
+    for (auto element:v2){
+        cout<<element<<" "; // Now values of v2 are 1 2
+    }
+    cout<<endl;
+
+    //Sort function 
+    sort(v.begin(),v.end());
+
+
+    return 0;
+}
